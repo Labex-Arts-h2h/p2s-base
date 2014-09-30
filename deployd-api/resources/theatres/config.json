@@ -1,0 +1,45 @@
+{
+	"type": "Collection",
+	"properties": {
+		"nom": {
+			"name": "nom",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "nom",
+			"order": 0
+		},
+		"descriptif": {
+			"name": "descriptif",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "descriptif",
+			"order": 1
+		},
+		"adresse": {
+			"name": "adresse",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "adresse",
+			"order": 2
+		},
+		"gps": {
+			"name": "gps",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "gps",
+			"order": 3
+		},
+		"links": {
+			"name": "links",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "links",
+			"order": 4
+		}
+	}
+}

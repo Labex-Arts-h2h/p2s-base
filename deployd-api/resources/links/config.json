@@ -1,0 +1,45 @@
+{
+	"type": "Collection",
+	"properties": {
+		"target1": {
+			"name": "target1",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "target1",
+			"order": 0
+		},
+		"target2": {
+			"name": "target2",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "target2",
+			"order": 1
+		},
+		"type": {
+			"name": "type",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "type",
+			"order": 2
+		},
+		"debut": {
+			"name": "debut",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "debut",
+			"order": 3
+		},
+		"fin": {
+			"name": "fin",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "fin",
+			"order": 4
+		}
+	}
+}

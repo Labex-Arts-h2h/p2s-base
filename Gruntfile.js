@@ -69,6 +69,18 @@ module.exports = function (grunt) {
         hostname: 'localhost',
         livereload: 35729
       },
+      proxies: [
+          {
+              context: '/',
+              host: 'localhost',
+              port: 2404
+              // https: false,
+              // xforward: false,
+              // headers: {
+              //     "x-custom-added-header": value
+              // }
+          }
+      ],
       livereload: {
         options: {
           open: true,
@@ -331,6 +343,37 @@ module.exports = function (grunt) {
     // concat: {
     //   dist: {}
     // },
+    // Configuration to be run (and then tested).
+
+    // DEPLOYD
+    deployd: {
+      dev: {
+        options: {
+          port: 7777,
+          db: {
+            host: 'localhost',
+            port: 27017,
+            name: 'development'
+          },
+          env: 'development'
+        }
+      },
+      prod: {
+        options: {
+          port: 7777,
+          db: {
+            port: 27017,
+            name: 'production',
+            host: 'localhost',
+            credentials: {
+              username: 'prod_user',
+              password: 'prod_pass'
+            }
+          },
+          env: 'production'
+        }
+      }
+    },
 
     // Test settings
     karma: {
@@ -341,6 +384,8 @@ module.exports = function (grunt) {
     }
   });
 
+  grunt.loadNpmTasks('grunt-deployd');
+  grunt.loadNpmTasks('grunt-connect-proxy');
 
   grunt.registerTask('serve', function (target) {
     if (target === 'dist') {
@@ -352,6 +397,7 @@ module.exports = function (grunt) {
       'bowerInstall',
       'concurrent:server',
       'autoprefixer',
+      'configureProxies',
       'connect:livereload',
       'watch'
     ]);
