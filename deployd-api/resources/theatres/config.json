@@ -40,6 +40,22 @@
 			"required": false,
 			"id": "links",
 			"order": 4
+		},
+		"date": {
+			"name": "date",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "date",
+			"order": 5
+		},
+		"dates": {
+			"name": "dates",
+			"type": "array",
+			"typeLabel": "array",
+			"required": false,
+			"id": "dates",
+			"order": 6
 		}
 	}
 }

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('p2sApp',['ngResource','ngSanitize','ui.router']);
+angular.module('p2sApp',['ngResource','ngSanitize','ui.router','mgcrea.ngStrap']);
 
 angular.module('p2sApp').config(function($stateProvider,$httpProvider){
     $stateProvider.state('home',{
