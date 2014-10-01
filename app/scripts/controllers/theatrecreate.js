@@ -5,7 +5,7 @@ angular.module('p2sApp')
     $scope.theatre=new Api.Theatres();
     $scope.theatre.dates = Array();
     $scope.addDate = function() {
-        $scope.theatre.dates.push(new Date());
+        $scope.theatre.dates.push({"description":"Description de la date", "date" : new Date()});
     };
     $scope.removeDate = function(index) {
         $scope.theatre.dates.splice(index, 1);

@@ -21,13 +21,21 @@
             <th>Adresse&nbsp;<a ng-click="sort_by('adresse');"><i class="glyphicon glyphicon-sort"></i></a></th>
         </thead>
         <tbody>
+
+
+
             <!-- <tr ng-repeat="theatre in theatres"> -->
             <tr ng-repeat="theatre in filtered = (theatres | filter:search | orderBy : predicate :reverse)">
                 <td>{{theatre.nom}}</td>
                 <td>{{theatre.descriptif}}</td>
                 <td>{{theatre.adresse}}</td>
                 <td>
-                    <a class="btn btn-primary" ui-sref="editTheatre({id:theatre.id})">Edit</a>
+                    <a class="btn btn-primary" ui-sref="editTheatre({id:theatre.id})">
+                        <i class="glyphicon glyphicon-pencil"></i>
+                    </a>
+                    <a class="btn btn-danger" data-animation="am-fade-and-slide-top" data-template="views/modal/confirmDelete.tpl.html" bs-modal="modal">
+                        <i class="glyphicon glyphicon-remove"></i>
+                    </a>
                 </td>
             </tr>
         </tbody>

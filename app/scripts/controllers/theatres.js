@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('p2sApp')
-  .controller('TheatresCtrl', function ($scope, $http, Api) {
+  .controller('TheatresCtrl', function ($scope,$state, $http, Api, $modal, $window) {
 
   	// == ALL
    	$scope.theatres = Api.Theatres.query();
@@ -19,7 +19,11 @@ angular.module('p2sApp')
 	// $scope.theatreEdit.gps = "Mehdi";
 	// $scope.theatreEdit.$update({id: "9fa3dfc7b841993e"});
 
-
+    $scope.remove = function($index) {
+		$scope.theatres[$index].$delete(function() {
+		  $scope.theatres.splice($index, 1);
+		});
+    };
 
 
     $scope.sort_by = function(predicate) {

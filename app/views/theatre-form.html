@@ -16,18 +16,13 @@
         <input type="text" ng-model="theatre.adresse" class="form-control" id="director" placeholder="Ajouter les coordonnées GPS"/>
     </div>
 </div>
-<!-- <div class="form-group" ng-class="{'has-error': datepickerForm.date.$invalid}">
-    <label class="col-sm-2 control-label">Date de création<small></small></label>
-    <div class="col-sm-3">
-        <input type="text" class="form-control" ng-model="theatre.date" name="date" bs-datepicker>
-    </div>
-</div> -->
-
-<div class="form-inline">
+<hr />
+<div class="form-group">
     <label for="date" class="col-sm-2 control-label">Dates</label>
-    <div class="col-sm-4">
+    <div class="col-sm-8">
         <div ng-repeat="date in theatre.dates">
-            <input  type="text" class="form-control " ng-model="date" name="date" bs-datepicker>
+            <input  type="text" class="form-control" style="width:300px;display:inline;" ng-model="date.description" name="descriptif" >
+            <input  type="text" class="form-control" style="width:200px;display:inline;" ng-model="date.date" data-date-format="dd-MM-yyyy" name="date" bs-datepicker>
             <button class="btn btn-warning" ng-click="removeDate($index)">
                 <span class="glyphicon glyphicon-remove-circle"></span>
             </button>
@@ -35,7 +30,11 @@
         <button type="button" class="btn btn-info" ng-click="addDate()">Ajout de date</button>
     </div>
 </div>
-
+<hr />
+<div class="form-group">
+    <label for="date" class="col-sm-2 control-label">Liens</label>
+</div>
+<hr />
 <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
         <input type="submit" class="btn btn-primary" value="Sauvegarde"/>
