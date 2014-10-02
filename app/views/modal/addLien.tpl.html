@@ -1,0 +1,46 @@
+<div class="modal" tabindex="-1" role="dialog" ng-controller="LinkCtrl">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header" ng-show="title">
+        <button type="button" class="close" ng-click="$hide()">&times;</button>
+        <h4 class="modal-title" ng-bind="title"></h4>
+      </div>
+<!--       <div class="modal-body" ng-bind="content">
+      </div> -->
+      <div class="modal-body">
+      <form role="form">
+          <div>
+            <button type="button" class="btn btn-default" data-html="1" ng-options="item as item.name for item in typeItem" placeholder="Choisir un type d'entité" ng-model="selectedType" ng-change='launchType(this);'  bs-select>
+          </div>
+          <div ng-show="nextChoice">
+            <hr/>
+            <label for="date" class="control-label">Choix</label>
+            <input type="text" class="form-control" ng-model="selectedItem" ng-options="item.nom as item.nom for item in itemsSuggest" placeholder="Enter" bs-typeahead>
+          </div>
+          <div ng-show="nextChoice">
+              <hr/>
+              <label>
+              Période <small>(Date de début et date de fin)</small></label><br>
+              <div>
+                <input class="form-control" type="text" ng-model="fromDate" data-max-date="{{untilDate}}" placeholder="Début" bs-datepicker>
+              </div>
+              <div>
+                <input class="form-control" type="text" ng-model="untilDate" data-min-date="{{fromDate}}" placeholder="Fin" bs-datepicker>
+              </div>
+          </div>
+          <div ng-show="nextChoice">
+            <label>Type</label>
+            <input type="text" class="form-control" ng-model="typeLink">
+            <label>Descriptif</label>
+            <textarea class="form-control" ng-model="descLink" rows="3"></textarea>
+          </div>
+      </form>
+        
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" ng-click="$hide()">Annulation</button>
+        <button type="button" class="btn btn-danger" ng-click="add($index);$hide();">Ajout</button>
+      </div>
+    </div>
+  </div>
+</div>

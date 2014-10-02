@@ -2,7 +2,7 @@
     
     <div class="row">
         <div class="col-md-8">
-            <a class="btn btn-lg btn-success" ui-sref="newTheatre">
+            <a class="btn btn-lg btn-success" ui-sref="newPiece">
                 <i class="glyphicon glyphicon-plus"></i>
             </a>
 
@@ -18,7 +18,6 @@
         <thead>
             <th>Nom&nbsp;<a ng-click="sort_by('nom');"><i class="glyphicon glyphicon-sort"></i></a></th>
             <th>Description&nbsp;<a ng-click="sort_by('descriptif');"><i class="glyphicon glyphicon-sort"></i></a></th>
-            <th>Adresse&nbsp;<a ng-click="sort_by('adresse');"><i class="glyphicon glyphicon-sort"></i></a></th>
             <th>Date</th>
             <th>Actions</th>
         </thead>
@@ -26,21 +25,19 @@
 
 
 
-            <!-- <tr ng-repeat="theatre in theatres"> -->
-            <tr ng-repeat="theatre in filtered = (theatres | filter:search | orderBy : predicate :reverse)">
-                <td>{{theatre.nom}}</td>
-                <td>{{theatre.descriptif}}</td>
-                <td>{{theatre.adresse}}</td>
+            <tr ng-repeat="piece in filtered = (pieces | filter:search | orderBy : predicate :reverse)">
+                <td>{{piece.nom}}</td>
+                <td>{{piece.descriptif}}</td>
                 <td>
-                    <ul ng-repeat="dates in theatre.dates">
+                    <ul ng-repeat="dates in piece.dates">
                         <li><strong>{{dates.description}}</strong> : {{dates.date}}</li>
                     </ul>
                </td>
                 <td>
-                    <a class="btn btn-primary" ui-sref="editTheatre({id:theatre.id})">
+                    <a class="btn btn-primary" ui-sref="editPiece({id:piece.id})">
                         <i class="glyphicon glyphicon-pencil"></i>
                     </a>
-                    <a class="btn btn-danger" data-animation="am-fade-and-slide-top" data-template="views/modal/confirmDelete.tpl.html"  data-placement="center" data-title="Suppression" data-content="Effacer ce théâtre ?" bs-modal="modal">
+                    <a class="btn btn-danger" data-animation="am-fade-and-slide-top" data-template="views/modal/confirmDelete.tpl.html"  data-placement="center" data-title="Suppression" data-content="Effacer cette pièce ?" bs-modal="modal">
                         <i class="glyphicon glyphicon-remove"></i>
                     </a>
                 </td>
