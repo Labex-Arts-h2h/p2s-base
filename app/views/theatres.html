@@ -8,7 +8,7 @@
 
         </div>
         <div class="col-md-4">
-            <input type="text" ng-model="search" ng-change="filter()" placeholder="Filter" class="form-control" />        
+            <input type="text" ng-model="search" ng-change="filter()" placeholder="Recherche" class="form-control" />        
         </div>
     </div>
 
@@ -19,6 +19,8 @@
             <th>Nom&nbsp;<a ng-click="sort_by('nom');"><i class="glyphicon glyphicon-sort"></i></a></th>
             <th>Description&nbsp;<a ng-click="sort_by('descriptif');"><i class="glyphicon glyphicon-sort"></i></a></th>
             <th>Adresse&nbsp;<a ng-click="sort_by('adresse');"><i class="glyphicon glyphicon-sort"></i></a></th>
+            <th>Date</th>
+            <th>Actions</th>
         </thead>
         <tbody>
 
@@ -29,6 +31,11 @@
                 <td>{{theatre.nom}}</td>
                 <td>{{theatre.descriptif}}</td>
                 <td>{{theatre.adresse}}</td>
+                <td>
+                    <ul ng-repeat="dates in theatre.dates">
+                        <li><strong>{{dates.description}}</strong> : {{dates.date}}</li>
+                    </ul>
+               </td>
                 <td>
                     <a class="btn btn-primary" ui-sref="editTheatre({id:theatre.id})">
                         <i class="glyphicon glyphicon-pencil"></i>
