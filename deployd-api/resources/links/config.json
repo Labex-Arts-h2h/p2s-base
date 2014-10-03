@@ -40,6 +40,14 @@
 			"required": false,
 			"id": "fin",
 			"order": 4
+		},
+		"description": {
+			"name": "description",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "description",
+			"order": 5
 		}
 	}
 }

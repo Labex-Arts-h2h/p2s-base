@@ -15,7 +15,13 @@
           <div ng-show="nextChoice">
             <hr/>
             <label for="date" class="control-label">Choix</label>
-            <input type="text" class="form-control" ng-model="selectedItem" ng-options="item.nom as item.nom for item in itemsSuggest" placeholder="Enter" bs-typeahead>
+            <ui-select ng-model="itemsSuggest.selected" theme="bootstrap" ng-disabled="disabled" style="width: 300px;">
+              <ui-select-match placeholder="Choix d'une entité dans la liste...">{{$select.selected.nom}}</ui-select-match>
+              <ui-select-choices repeat="item in itemsSuggest | filter: $select.search">
+                <span ng-bind-html="item.nom | highlight: $select.search"></span>
+              </ui-select-choices>
+            </ui-select>
+
           </div>
           <div ng-show="nextChoice">
               <hr/>

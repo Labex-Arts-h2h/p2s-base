@@ -1,0 +1,58 @@
+<div class="form-group">
+    <label  class="col-sm-2 control-label">Cible 1</label>
+    <div class="col-sm-8">
+        <div>
+            <button type="button" class="btn btn-default" data-html="1" ng-options="item as item.name for item in typeItem" placeholder="Choisir un type d'entité" ng-model="selectedTypeTarget1" ng-change='launchType1(this);'  bs-select>
+        </div>
+        <div>
+            <ui-select ng-model="itemsSuggestTarget1.selected" theme="bootstrap" ng-disabled="disabled" style="width: 300px;">
+            <ui-select-match placeholder="Choix d'une entité dans la liste...">{{$select.selected.nom}}</ui-select-match>
+            <ui-select-choices repeat="item in itemsSuggestTarget1 | filter: $select.search">
+            <span ng-bind-html="item.nom | highlight: $select.search"></span>
+            </ui-select-choices>
+            </ui-select>
+        </div>
+    </div>
+</div>
+<hr/>
+<div class="form-group">
+    <label  class="col-sm-2 control-label">Cible 2</label>
+    <div class="col-sm-8">
+        <div>
+            <button type="button" class="btn btn-default" data-html="1" ng-options="item as item.name for item in typeItem" placeholder="Choisir un type d'entité" ng-model="selectedTypeTarget2" ng-change='launchType2(this);'  bs-select>
+        </div>
+        <div>
+            <ui-select ng-model="itemsSuggestTarget2.selected" theme="bootstrap" ng-disabled="disabled" style="width: 300px;">
+            <ui-select-match placeholder="Choix d'une entité dans la liste...">{{$select.selected.nom}}</ui-select-match>
+            <ui-select-choices repeat="item in itemsSuggestTarget2 | filter: $select.search">
+            <span ng-bind-html="item.nom | highlight: $select.search"></span>
+            </ui-select-choices>
+            </ui-select>
+        </div>
+    </div>
+</div>    
+<div class="form-group">
+    <hr/>
+    <label for="date" class="col-sm-2 control-label">
+    Période <small>(Date de début et date de fin)</small></label><br>
+    <div class="col-sm-8">    
+        <div>
+            <input class="form-control" type="text" ng-model="fromDate" data-max-date="{{untilDate}}" placeholder="Début" bs-datepicker>
+        </div>
+        <div>
+            <input class="form-control" type="text" ng-model="untilDate" data-min-date="{{fromDate}}" placeholder="Fin" bs-datepicker>
+        </div>
+    </div>
+</div>
+<div class="form-group">
+    <label class="col-sm-2 control-label">Type</label>
+    <div class="col-sm-8">    
+        <input type="text" class="form-control" ng-model="typeLink">
+    </div>
+</div>   
+<div class="form-group"> 
+    <label class="col-sm-2 control-label">Descriptif</label>
+    <div class="col-sm-8"> 
+        <textarea class="form-control" ng-model="descLink" rows="3"></textarea>
+    </div>
+</div>

@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('p2sApp',['ngResource','ngSanitize','ui.router','mgcrea.ngStrap']);
+angular.module('p2sApp',['ngResource','ngSanitize','ui.router','mgcrea.ngStrap','ui.select']);
 
 angular.module('p2sApp').config(function($stateProvider,$httpProvider){
     $stateProvider.state('home',{
@@ -31,6 +31,18 @@ angular.module('p2sApp').config(function($stateProvider,$httpProvider){
         url:'/piece/:id/edit',
         templateUrl:'views/piece-edit.html',
         controller:'PieceeditCtrl'
+    }).state('links',{
+       url:'/links',
+       templateUrl:'views/links.html',
+       controller:'LinksCtrl'
+    }).state('newLink',{
+        url:'/link/new',
+        templateUrl:'views/link-add.html',
+        controller:'LinkecreateCtrl'
+    }).state('editLink',{
+        url:'/link/:id/edit',
+        templateUrl:'views/link-edit.html',
+        controller:'LinkeditCtrl'
     });
 }).run(function($state){
    $state.go('home');
