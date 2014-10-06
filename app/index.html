@@ -48,9 +48,15 @@
             <li ng-class="{ active: isActive('/pieces')}">
               <a href="#/pieces">Pièces</a>
             </li>
+            <li ng-class="{ active: isActive('/personnes')}">
+              <a href="#/personnes">Personnes</a>
+            </li>            
             <li ng-class="{ active: isActive('/links')}">
               <a href="#/links">Liens</a>
             </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#">API</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
@@ -96,6 +102,7 @@
         <script src="scripts/controllers/main.js"></script>
         <script src="scripts/controllers/theatres.js"></script>
         <script src="scripts/controllers/pieces.js"></script>
+        <script src="scripts/controllers/personnes.js"></script>
         <script src="scripts/controllers/links.js"></script>
         <script src="scripts/controllers/nav.js"></script>
         <script src="scripts/services/apiservice.js"></script>

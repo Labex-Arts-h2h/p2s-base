@@ -28,7 +28,10 @@ angular.module('p2sApp').factory('Api', ['$resource',
     {
       update: { method: 'PUT', params: {id: '@id'} }
     }),
-    Personnes:  $resource(serviceBase+'/personnes/:id', {id: '@id'})
+    Personnes:  $resource(serviceBase+'/personnes/:id', {id: '@id'},
+          {
+      update: { method: 'PUT', params: {id: '@id'} }
+    })
   };
 }]);
 

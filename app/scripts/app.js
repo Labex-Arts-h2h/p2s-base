@@ -9,40 +9,52 @@ angular.module('p2sApp').config(function($stateProvider,$httpProvider){
         controller:'MainCtrl'
     }).state('theatres',{
        url:'/theatres',
-       templateUrl:'views/theatres.html',
+       templateUrl:'views/theatres/theatres.html',
        controller:'TheatresCtrl'
     }).state('newTheatre',{
         url:'/theatre/new',
-        templateUrl:'views/theatre-add.html',
+        templateUrl:'views/theatres/theatre-add.html',
         controller:'TheatrecreateCtrl'
     }).state('editTheatre',{
         url:'/theatre/:id/edit',
-        templateUrl:'views/theatre-edit.html',
+        templateUrl:'views/theatres/theatre-edit.html',
         controller:'TheatreeditCtrl'
     }).state('pieces',{
        url:'/pieces',
-       templateUrl:'views/pieces.html',
+       templateUrl:'views/pieces/pieces.html',
        controller:'PiecesCtrl'
     }).state('newPiece',{
         url:'/piece/new',
-        templateUrl:'views/piece-add.html',
+        templateUrl:'views/pieces/piece-add.html',
         controller:'PiececreateCtrl'
     }).state('editPiece',{
         url:'/piece/:id/edit',
-        templateUrl:'views/piece-edit.html',
+        templateUrl:'views/pieces/piece-edit.html',
         controller:'PieceeditCtrl'
     }).state('links',{
        url:'/links',
-       templateUrl:'views/links.html',
+       templateUrl:'views/links/links.html',
        controller:'LinksCtrl'
     }).state('newLink',{
         url:'/link/new',
-        templateUrl:'views/link-add.html',
+        templateUrl:'views/links/link-add.html',
         controller:'LinkcreateCtrl'
     }).state('editLink',{
         url:'/link/:id/edit',
-        templateUrl:'views/link-edit.html',
+        templateUrl:'views/links/link-edit.html',
         controller:'LinkeditCtrl'
+    }).state('personnes',{
+       url:'/personnes',
+       templateUrl:'views/personnes/personnes.html',
+       controller:'PersonnesCtrl'
+    }).state('newPersonne',{
+        url:'/personne/new',
+        templateUrl:'views/personnes/personne-add.html',
+        controller:'PersonnecreateCtrl'
+    }).state('editPersonne',{
+        url:'/personne/:id/edit',
+        templateUrl:'views/personnes/personne-edit.html',
+        controller:'PersonneeditCtrl'
     });
 }).run(function($state){
    $state.go('home');

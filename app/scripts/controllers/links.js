@@ -18,7 +18,7 @@ angular.module('p2sApp').controller('LinkcreateCtrl', function($scope, $state, A
     $scope.load = function() {
         $scope.typeItem = [
         { id: 1, name: 'Theatre' },
-        { id: 2, name: 'Personne' },
+        { id: 2, name: 'Personnes' },
         { id: 3, name: 'Pièces' }
         ];
         $scope.disabled1 = $scope.disabled2 = true;
@@ -28,14 +28,14 @@ angular.module('p2sApp').controller('LinkcreateCtrl', function($scope, $state, A
         $scope.disabled1 = false;
         $scope.link.target1.selected = null;
         if (me.link.target1.target.id == 1) {$scope.itemsSuggestTarget1 = Api.Theatres.query();};
-        if (me.link.target1.target.id == 2) {$scope.itemsSuggestTarget1 = Api.Theatres.query();};
+        if (me.link.target1.target.id == 2) {$scope.itemsSuggestTarget1 = Api.Personnes.query();};
         if (me.link.target1.target.id == 3) {$scope.itemsSuggestTarget1 = Api.Pieces.query();};                 
     };
     $scope.launchType2 = function(me) {
         $scope.nextChoice = "true";
         $scope.disabled2 = false;
         if (me.link.target2.target.id == 1) {$scope.itemsSuggestTarget2 = Api.Theatres.query();};
-        if (me.link.target2.target.id == 2) {$scope.itemsSuggestTarget2 = Api.Theatres.query();};
+        if (me.link.target2.target.id == 2) {$scope.itemsSuggestTarget2 = Api.Personnes.query();};
         if (me.link.target2.target.id == 3) {$scope.itemsSuggestTarget2 = Api.Pieces.query();};                
     };    
     $scope.add = function() {
