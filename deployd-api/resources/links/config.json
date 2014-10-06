@@ -3,16 +3,16 @@
 	"properties": {
 		"target1": {
 			"name": "target1",
-			"type": "string",
-			"typeLabel": "string",
+			"type": "object",
+			"typeLabel": "object",
 			"required": false,
 			"id": "target1",
 			"order": 0
 		},
 		"target2": {
 			"name": "target2",
-			"type": "string",
-			"typeLabel": "string",
+			"type": "object",
+			"typeLabel": "object",
 			"required": false,
 			"id": "target2",
 			"order": 1
