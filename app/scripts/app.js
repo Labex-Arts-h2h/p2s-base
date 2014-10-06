@@ -38,7 +38,7 @@ angular.module('p2sApp').config(function($stateProvider,$httpProvider){
     }).state('newLink',{
         url:'/link/new',
         templateUrl:'views/link-add.html',
-        controller:'LinkecreateCtrl'
+        controller:'LinkcreateCtrl'
     }).state('editLink',{
         url:'/link/:id/edit',
         templateUrl:'views/link-edit.html',
