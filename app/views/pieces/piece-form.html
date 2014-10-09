@@ -7,7 +7,7 @@
 <div class="form-group">
     <label for="year" class="col-sm-2 control-label">Descriptif</label>
     <div class="col-sm-8">
-        <textarea type="text" ng-model="piece.descriptif" class="form-control" id="year" placeholder="Descriptif de la pièce"/>
+        <textarea type="text" ng-model="piece.descriptif" class="form-control" id="year" placeholder="Descriptif de la pièce"></textarea>
     </div>
 </div>
 <hr />
@@ -18,7 +18,7 @@
             <input  type="text" class="form-control" style="width:300px;display:inline;" ng-model="date.description" name="descriptif" >
             <input  type="text" class="form-control" style="width:200px;display:inline;" ng-model="date.date" data-date-format="dd-MM-yyyy" name="date" bs-datepicker>
             <button class="btn btn-warning" ng-click="removeDate($index)">
-                <span class="glyphicon glyphicon-remove-circle"></span>
+            <span class="glyphicon glyphicon-remove-circle"></span>
             </button>
         </div>
         <button type="button" class="btn btn-info" ng-click="addDate()">Ajout de date</button>
@@ -30,6 +30,3 @@
         <input type="submit" class="btn btn-primary" value="Sauvegarde"/>
     </div>
 </div>
-
-
-
