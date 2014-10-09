@@ -14,7 +14,7 @@ angular.module('p2sApp').controller('PersonnesCtrl', function($scope, $state, $h
 });
 // CREATE
 angular.module('p2sApp').controller('PersonnecreateCtrl', function($scope, $state, Api) {
-    $scope.personne = new Api.Theatres();
+    $scope.personne = new Api.Personnes();
     $scope.personne.dates = Array();
     $scope.addDate = function() {
         $scope.personne.dates.push({
