@@ -15,14 +15,14 @@ angular.module('p2sApp',['ngResource','ngSanitize','ngCookies','ui.router','mgcr
   editor: 'editor',
   guest: 'guest'
   });
-
 angular.module('p2sApp')
   .config(function($stateProvider, $urlRouterProvider, $locationProvider, $httpProvider, USER_ROLES){
 
     $stateProvider.state('home',{
         url:'/',
         templateUrl:'views/main.html',
-        controller:'MainCtrl'
+        controller:'MainCtrl',
+        authorizedRoles : [USER_ROLES.admin, USER_ROLES.editor]
     }).state('login',{
        url:'/login',
        templateUrl:'views/login.html',
@@ -36,11 +36,13 @@ angular.module('p2sApp')
     }).state('newTheatre',{
         url:'/theatre/new',
         templateUrl:'views/theatres/theatre-add.html',
-        controller:'TheatrecreateCtrl'
+        controller:'TheatrecreateCtrl',
+        authorizedRoles : [USER_ROLES.admin, USER_ROLES.editor]
     }).state('editTheatre',{
         url:'/theatre/:id/edit',
         templateUrl:'views/theatres/theatre-edit.html',
-        controller:'TheatreeditCtrl'
+        controller:'TheatreeditCtrl',
+        authorizedRoles : [USER_ROLES.admin, USER_ROLES.editor]
     }).state('pieces',{
        url:'/pieces',
        templateUrl:'views/pieces/pieces.html',
@@ -49,38 +51,46 @@ angular.module('p2sApp')
     }).state('newPiece',{
         url:'/piece/new',
         templateUrl:'views/pieces/piece-add.html',
-        controller:'PiececreateCtrl'
+        controller:'PiececreateCtrl',
+        authorizedRoles : [USER_ROLES.admin, USER_ROLES.editor]        
     }).state('editPiece',{
         url:'/piece/:id/edit',
         templateUrl:'views/pieces/piece-edit.html',
-        controller:'PieceeditCtrl'
+        controller:'PieceeditCtrl',
+        authorizedRoles : [USER_ROLES.admin, USER_ROLES.editor]        
     }).state('links',{
        url:'/links',
        templateUrl:'views/links/links.html',
-       controller:'LinksCtrl'
+       controller:'LinksCtrl',
+        authorizedRoles : [USER_ROLES.admin, USER_ROLES.editor]       
     }).state('newLink',{
         url:'/link/new',
         templateUrl:'views/links/link-add.html',
-        controller:'LinkcreateCtrl'
+        controller:'LinkcreateCtrl',
+        authorizedRoles : [USER_ROLES.admin, USER_ROLES.editor]        
     }).state('editLink',{
         url:'/link/:id/edit',
         templateUrl:'views/links/link-edit.html',
-        controller:'LinkeditCtrl'
+        controller:'LinkeditCtrl',
+        authorizedRoles : [USER_ROLES.admin, USER_ROLES.editor]        
     }).state('personnes',{
        url:'/personnes',
        templateUrl:'views/personnes/personnes.html',
-       controller:'PersonnesCtrl'
+       controller:'PersonnesCtrl',
+       authorizedRoles : [USER_ROLES.admin, USER_ROLES.editor]       
     }).state('newPersonne',{
         url:'/personne/new',
         templateUrl:'views/personnes/personne-add.html',
-        controller:'PersonnecreateCtrl'
+        controller:'PersonnecreateCtrl',
+        authorizedRoles : [USER_ROLES.admin, USER_ROLES.editor]
     }).state('editPersonne',{
         url:'/personne/:id/edit',
         templateUrl:'views/personnes/personne-edit.html',
-        controller:'PersonneeditCtrl'
+        controller:'PersonneeditCtrl',
+        authorizedRoles : [USER_ROLES.admin, USER_ROLES.editor]        
     });
 
-    // $urlRouterProvider.otherwise('/404');
+    $urlRouterProvider.otherwise('/login');
 
     // // FIX for trailing slashes. Gracefully "borrowed" from https://github.com/angular-ui/ui-router/issues/50
     // $urlRouterProvider.rule(function($injector, $location) {
@@ -126,21 +136,27 @@ angular.module('p2sApp')
 
 
 }).run(function($state, $rootScope, AUTH_EVENTS, Auth){
-    $rootScope.$on('$stateChangeStart', function (event, nextState) {
-     console.log(Auth.isAuthorized(nextState.authorizedRoles));
 
-     if (!Auth.isAuthorized(nextState.authorizedRoles)) {
-       //event.preventDefault();
-       if (Auth.isAuthenticated()) {
-          console.log("auth");
-         $rootScope.$broadcast(AUTH_EVENTS.notAuthorized);
-       } else {
-        console.log("not");
-        //$state.transitionTo("login")
-         $rootScope.$broadcast(AUTH_EVENTS.notAuthenticated);
-       }
-     }
+    $rootScope.$on('$stateChangeStart', function (event, nextState) {
+      if (nextState.name != 'login') {
+        if (!Auth.isAuthorized(nextState.authorizedRoles))  { // SI l'user n'est pas autorisé
+            console.log("Pas autorisé");
+           event.preventDefault();
+           if (Auth.isAuthenticated()) {
+            console.log("Mais authentifié");
+             $rootScope.$broadcast(AUTH_EVENTS.notAuthorized);
+           } else {
+            console.log("et pas authentifié");
+              $state.go('login');
+              $rootScope.$broadcast(AUTH_EVENTS.notAuthenticated);
+           }
+         }
+         else {
+            console.log("Utilisateur Autorisé");
+         }
+     };
    });
+
 
   
   //

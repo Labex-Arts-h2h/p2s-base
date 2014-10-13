@@ -8,13 +8,13 @@
 //http://www.frederiknakstad.com/2014/02/09/ui-router-in-angular-client-side-auth/
 //http://arthur.gonigberg.com/2013/06/29/angularjs-role-based-auth/ 
 //http://blog.brunoscopelliti.com/deal-with-users-authentication-in-an-angularjs-web-app
-
 //Video a reagarde
 //http://youtu.be/18ifoT-Id54
 // exemple facile
 //http://stackoverflow.com/questions/23960105/why-wont-the-state-change-in-a-unit-test-for-an-angularjs-controller
 angular.module('p2sApp')
-.factory('Auth', function($http, $cookieStore, Session){
+.factory('Auth', function($http, $cookieStore, Session, USER_ROLES){
+ //var currentUser = Session.get('user');
   return {
     login: function (credentials) {
       return $http
@@ -24,14 +24,22 @@ angular.module('p2sApp')
           return res.data;
         });
     },
+    logout: function() {
+        return $http
+        .post('http://localhost:2403/users/logout')
+        .then(function (res) {
+            console.log("logout");
+            Session.destroy();
+        });
+    },
     isAuthenticated: function () {
-      return !!Session.userId;
+      return !!Session.get('user');
     },
     isAuthorized: function (authorizedRoles) {
       if (!angular.isArray(authorizedRoles)) {
         authorizedRoles = [authorizedRoles];
       }
-      return this.isAuthenticated() && authorizedRoles.indexOf(Session.userRole) !== -1;
+      return this.isAuthenticated() && authorizedRoles.indexOf(Session.get('user').userRole) !== -1;
     }
   };
 

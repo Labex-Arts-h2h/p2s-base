@@ -38,7 +38,7 @@
           <a class="navbar-brand" href="#/">Théâtre sur Seine</a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" ng-controller="NavCtrl">
-          <ul class="nav navbar-nav">
+          <ul class="nav navbar-nav" ng-if="isAuthorized(userRoles.admin)">
             <li ng-class="{ active: isActive('/')}">
               <a href="#/"><span class="glyphicon glyphicon-home"></span></a>
             </li>
@@ -55,8 +55,9 @@
               <a href="#/links">Liens</a>
             </li>
           </ul>
-          <ul class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav navbar-right" ng-if="isAuthorized(userRoles.admin)">
             <li><a href="#">API</a></li>
+            <li><a href="#" ng-click='loginOut()'>logout</a></li>
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
