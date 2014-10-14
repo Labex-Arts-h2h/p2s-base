@@ -8,7 +8,6 @@ angular.module('p2sApp').controller('NavCtrl', function($scope, $location, Auth,
 	};
 	$scope.loginOut = function() {
 	    Auth.logout();
-	    //$cookieStore.remove('user');
 	};
 
 });

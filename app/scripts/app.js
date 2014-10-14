@@ -157,43 +157,4 @@ angular.module('p2sApp')
      };
    });
 
-
-  
-  //
-    // $rootScope.$on("$stateChangeStart", function (event, nextState) {
-    //     if (!Auth.isAuthorized(nextState.authorizedRoles)) {
-    //         //$rootScope.error = "Access denied";
-    //         console.log(Auth.isAuthenticated());
-    //         event.preventDefault();
-    //          if(Auth.isAuthenticated()) {
-    //             //$rootScope.$broadcast(AUTH_EVENTS.notAuthorized);
-    //          } else {
-    //             console.log("els");
-    //              $rootScope.error = null;
-    //             //$state.go('login');
-    //          }
-    //     }
-    // });
-
-    // $rootScope.$on("$stateChangeStart", function (event, toState, toParams, fromState, fromParams) {
-    //     console.log(event);
-    //     if(!('data' in toState) || !('access' in toState.data)){
-    //         $rootScope.error = "Access undefined for this state";
-    //         event.preventDefault();
-    //     }
-    //     else if (!Auth.authorize(toState.data.access)) {
-    //         $rootScope.error = "Seems like you tried accessing a route you don't have access to...";
-    //         event.preventDefault();
-
-    //         if(fromState.url === '^') {
-    //             if(Auth.isLoggedIn()) {
-    //                 $state.go('home');
-    //             } else {
-    //                 $rootScope.error = null;
-    //                 $state.go('login');
-    //             }
-    //         }
-    //     }
-    // });
-
 });

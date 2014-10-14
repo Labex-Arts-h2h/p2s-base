@@ -17,7 +17,6 @@ angular.module('p2sApp')
     this.userId = null;
     this.userRole = null;
     $cookieStore.remove('user');
-    console.log('destroy');
   };
 
   return this;
