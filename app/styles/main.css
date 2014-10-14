@@ -7,3 +7,10 @@
 .form-signin button {
 	margin-top: 10px;
 }
+
+
+#graph {
+	border:1px solid grey;
+	background-color: #222222;
+}
+

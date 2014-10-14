@@ -1,17 +1,4 @@
 'use strict';
-
-angular.module('p2sApp')
-  .factory('apiService', function ($resource) {
-    return $resource('http://localhost:2403/theatres/:id', {}, 
-      {
-        show: { method: 'GET' },
-        update: { method: 'PUT', params: {id: '@id'} },
-        delete: { method: 'DELETE', params: {id: '@id'} 
-      }
-    })
-  });
-
-
 angular.module('p2sApp').factory('Api', ['$resource',
  function($resource) {
   var serviceBase = 'http://localhost:2403'
