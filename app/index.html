@@ -28,7 +28,7 @@
 
     <!-- Add your site or application content here -->
     <nav class="navbar navbar-default" role="navigation">
-      <div class="container">
+      <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
             <span class="sr-only">Toggle navigation</span>
@@ -63,8 +63,14 @@
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
+    <div class="container-fluid">
+      <div class="col-md-2 sidebar">
+        <ul><li>Test</li></ul>
+      </div>      
+      <div class="col-md-10" ui-view></div>
+    </div>
 
-    <div ui-view></div>
+    
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
      <script>

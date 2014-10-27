@@ -50,6 +50,7 @@ angular.module('p2sApp').controller('MainCtrl', function($scope, USER_ROLES, Aut
           },
           'theatre': {
             fontFace: 'times',
+            fontColor: 'black',
             shape: 'square',
             'color': {
               border: 'orange',
