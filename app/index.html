@@ -64,8 +64,24 @@
       </div><!-- /.container-fluid -->
     </nav>
     <div class="container-fluid">
-      <div class="col-md-2 sidebar">
-        <ul><li>Test</li></ul>
+      <div class="col-md-2 sidebar" ng-controller="NavCtrl">
+          <ul class="nav nav-sidebar" ng-if="isAuthorized(userRoles.admin)">
+            <li ng-class="{ active: isActive('/')}">
+              <a href="#/"><span class="glyphicon glyphicon-home"></span></a>
+            </li>
+            <li ng-class="{ active: isActive('/theatres')}">
+              <a href="#/theatres">Théâtres</a>
+            </li>
+            <li ng-class="{ active: isActive('/pieces')}">
+              <a href="#/pieces">Pièces</a>
+            </li>
+            <li ng-class="{ active: isActive('/personnes')}">
+              <a href="#/personnes">Personnes</a>
+            </li>            
+            <li ng-class="{ active: isActive('/links')}">
+              <a href="#/links">Liens</a>
+            </li>
+          </ul>
       </div>      
       <div class="col-md-10" ui-view></div>
     </div>
