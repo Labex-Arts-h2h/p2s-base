@@ -27,7 +27,7 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <nav class="navbar navbar-default" role="navigation">
+    <nav class="navbar navbar-default navbar-fixed-top nav-principale" role="navigation">
       <div class="container-fluid">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -36,10 +36,10 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#/">Théâtre sur Seine</a>
+          <a class="navbar-brand" href="#/">Patrimoine du Spectacle - DB</a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" ng-controller="NavCtrl">
-          <ul class="nav navbar-nav" ng-if="isAuthorized(userRoles.admin)">
+<!--           <ul class="nav navbar-nav" ng-if="isAuthorized(userRoles.admin)">
             <li ng-class="{ active: isActive('/')}">
               <a href="#/"><span class="glyphicon glyphicon-home"></span></a>
             </li>
@@ -55,35 +55,79 @@
             <li ng-class="{ active: isActive('/links')}">
               <a href="#/links">Liens</a>
             </li>
-          </ul>
+          </ul> -->
           <ul class="nav navbar-nav navbar-right" ng-if="isAuthorized(userRoles.admin)">
             <li><a href="#">API</a></li>
-            <li><a href="#" ng-click='loginOut()'>logout</a></li>
+            <li><a href="#" ng-click='loginOut()'>
+            <span class="glyphicon glyphicon glyphicon-log-out"></span> Déconnexion</a></li>
+            
           </ul>
         </div><!-- /.navbar-collapse -->
       </div><!-- /.container-fluid -->
     </nav>
     <div class="container-fluid">
-      <div class="col-md-2 sidebar" ng-controller="NavCtrl">
-          <ul class="nav nav-sidebar" ng-if="isAuthorized(userRoles.admin)">
-            <li ng-class="{ active: isActive('/')}">
-              <a href="#/"><span class="glyphicon glyphicon-home"></span></a>
-            </li>
-            <li ng-class="{ active: isActive('/theatres')}">
-              <a href="#/theatres">Théâtres</a>
-            </li>
-            <li ng-class="{ active: isActive('/pieces')}">
-              <a href="#/pieces">Pièces</a>
-            </li>
-            <li ng-class="{ active: isActive('/personnes')}">
-              <a href="#/personnes">Personnes</a>
-            </li>            
-            <li ng-class="{ active: isActive('/links')}">
-              <a href="#/links">Liens</a>
-            </li>
-          </ul>
-      </div>      
-      <div class="col-md-10" ui-view></div>
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar" ng-controller="NavCtrl">
+            <ul class="nav nav-sidebar" ng-if="isAuthorized(userRoles.admin)">
+              <li ng-class="{ active: isActive('/')}">
+                <a href="#/">
+                  <span class="glyphicon glyphicon-eye-open"></span>
+                  Visualisation
+                </a>
+              </li>
+            </ul>
+            <hr />
+            <ul class="nav nav-sidebar" ng-if="isAuthorized(userRoles.admin)">
+              <li ng-class="{ active: isActive('/theatres')}">
+                <a href="#/theatres">
+                  <span class="glyphicon glyphicon-home"></span>
+                  Théâtres
+                </a>
+              </li>
+              <li ng-class="{ active: isActive('/pieces')}">
+                <a href="#/pieces">
+                <span class="glyphicon glyphicon-star"></span> 
+                Pièces
+                </a>
+              </li>
+              <li ng-class="{ active: isActive('/personnes')}">
+                <a href="#/personnes"><span class="glyphicon glyphicon-user"></span> Personnes</a>
+              </li>            
+            </ul>
+            <hr />
+            <ul class="nav nav-sidebar" ng-if="isAuthorized(userRoles.admin)">
+              <li ng-class="{ active: isActive('/res')}">
+                <a href="#/res">
+                  <span class="glyphicon glyphicon-file"></span>
+                  Ressources
+                </a>
+              </li>
+              <li ng-class="{ active: isActive('/res')}">
+                <a href="#/res">
+                  <span class="glyphicon glyphicon-map-marker"></span>
+                  Lieux
+                </a>
+              </li>
+              <li ng-class="{ active: isActive('/res')}">
+                <a href="#/res">
+                  <span class="glyphicon glyphicon-calendar"></span>
+                Evénements
+                </a>
+              </li>                            
+            </ul>
+            <hr />
+            <ul class="nav nav-sidebar" ng-if="isAuthorized(userRoles.admin)">
+              <li ng-class="{ active: isActive('/links')}">
+                <a href="#/links">
+                  <span class="glyphicon glyphicon-link"></span>
+                  Liens
+                </a>
+              </li>
+            </ul>
+
+        </div>      
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ui-view></div>
+      </div>
     </div>
 
     

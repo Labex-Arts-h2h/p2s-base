@@ -1,3 +1,73 @@
+@import url(http://fonts.googleapis.com/css?family=Lato);
+
+/* Move down content because we have a fixed navbar that is 50px tall */
+body {
+  padding-top: 50px;
+}
+
+/* NAV BAR */
+.navbar-fixed-top {
+/*  background-color: #333541;*/
+}
+.nav-principale a.navbar-brand {
+	font-family: 'Lato', sans-serif;
+	text-transform: uppercase;
+}
+
+.nav-principale > li > a {
+	font-family: 'Lato', sans-serif;
+}
+
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+  font-family: 'Lato', sans-serif;
+  font-size: 1.2em;
+}
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+  color : #fff;
+}
+.nav-sidebar > li > a:hover {
+  background-color: #333541;
+  
+}
+
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: #393a46;
+  background-color: #f8f8f8;
+}
+
+.sidebar {
+	position: fixed;
+	top: 51px;
+	bottom: 0;
+	left: 0;
+	z-index: 1000;
+	display: block;
+	padding: 20px;
+	overflow-x: hidden;
+	overflow-y: auto;
+	background-color: #393a46;
+	border-right: 1px solid #eee;
+}
+
+/* MAIN */
+.main {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+
+/* Inscription */
 .form-signin {
   max-width: 330px;
   padding: 15px;
@@ -6,13 +76,6 @@
 
 .form-signin button {
 	margin-top: 10px;
-}
-
-.nav-sidebar > .active > a,
-.nav-sidebar > .active > a:hover,
-.nav-sidebar > .active > a:focus {
-  color: #fff;
-  background-color: #428bca;
 }
 
 #graph {

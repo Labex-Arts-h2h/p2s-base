@@ -37,7 +37,7 @@ angular.module('p2sApp').controller('MainCtrl', function($scope, USER_ROLES, Aut
 
   var options = {
         navigation: true,
-        "width":"100%",
+        "width":"90%",
         "height":"500px",
         "groups": {
           piece: {
