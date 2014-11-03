@@ -6,16 +6,23 @@ body {
 }
 
 /* NAV BAR */
-.navbar-fixed-top {
+.navbar-fixed-top > a {
+  
 /*  background-color: #333541;*/
+}
+
+.nav-principale {
+  border-bottom: 1px solid #393a46;
 }
 .nav-principale a.navbar-brand {
 	font-family: 'Lato', sans-serif;
 	text-transform: uppercase;
+  color: #393a46;
 }
 
 .nav-principale > li > a {
 	font-family: 'Lato', sans-serif;
+  color: #393a46;
 }
 
 .nav-sidebar {
@@ -71,7 +78,11 @@ body {
 .form-signin {
   max-width: 330px;
   padding: 15px;
-  margin: 0 auto;
+/*  margin: 0 auto;
+*/  font-family: 'Lato', sans-serif;
+}
+.form-signin h2 {
+  font-family: 'Lato', sans-serif;
 }
 
 .form-signin button {
@@ -83,3 +94,15 @@ body {
 /*	background-color: #222222;
 */}
 
+h3.title-page {
+  display: inline;
+  margin-right: 5px;
+}
+
+.btn-title {
+  vertical-align: text-bottom;
+}
+
+table {
+  margin-top: 10px;
+}

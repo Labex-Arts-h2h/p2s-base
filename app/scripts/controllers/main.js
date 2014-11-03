@@ -27,6 +27,24 @@ angular.module('p2sApp').controller('MainCtrl', function($scope, USER_ROLES, Aut
     });
   });    
 
+  var ressourcesList = Api.Ressources.query(function (response) {
+    angular.forEach(response, function (item) {
+        $scope.dataNetwork['nodes'].push({'id':item.id,'label':item.nom, 'group':'ressource'});
+    });
+  });
+
+  var eventsList = Api.Events.query(function (response) {
+    angular.forEach(response, function (item) {
+        $scope.dataNetwork['nodes'].push({'id':item.id,'label':item.nom, 'group':'evenement'});
+    });
+  });
+
+  var lieuxList = Api.Lieux.query(function (response) {
+    angular.forEach(response, function (item) {
+        $scope.dataNetwork['nodes'].push({'id':item.id,'label':item.nom, 'group':'lieu'});
+    });
+  });    
+
   var linksList = Api.Links.query(function (response) {
     angular.forEach(response, function (item) {
         $scope.dataNetwork['edges'].push({'from':item.target1.selected.id,'to':item.target2.selected.id});
@@ -42,19 +60,44 @@ angular.module('p2sApp').controller('MainCtrl', function($scope, USER_ROLES, Aut
         "groups": {
           piece: {
             shape: 'triangle',
-            color: '#FF9900' // orange
+            'color': {
+              border: '#ABDEF7',
+              background: '#ABDEF7'
+            }
           },
           'personne': {
             shape: 'dot',
-            color: "#2B7CE9" // blue
+            'color': {
+              border: '#E31B23',
+              background: '#E31B23'
+            }
           },
+          'evenement': {
+            shape: 'dot',
+            'color': {
+              border: '#543D3D',
+              background: '#543D3D'
+            }
+          },
+          'lieu': {
+            shape: 'dot',
+            'color': {
+              border: '#543D3D',
+              background: '#543D3D'
+            }
+          },
+          'ressource': {
+            shape: 'dot',
+            'color': {
+              border: '#FC758F',
+              background: '#FC758F'
+            }
+          },                                     
           'theatre': {
-            fontFace: 'times',
-            fontColor: 'black',
             shape: 'square',
             'color': {
-              border: 'orange',
-              background: 'yellow'
+              border: '#E3D522',
+              background: '#E3D522'
             }
           }          
         }

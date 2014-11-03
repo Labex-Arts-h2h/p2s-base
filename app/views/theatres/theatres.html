@@ -1,7 +1,11 @@
 <div>
     <div class="row">
         <div class="col-md-8">
-            <a class="btn btn-lg btn-success" ui-sref="newTheatre">
+            <h3 class="title-page">
+                <span class="glyphicon glyphicon-home"></span> 
+                 Théâtres
+            </h3>
+            <a class="btn btn-success btn-page btn-title" ui-sref="newTheatre">
                 <i class="glyphicon glyphicon-plus"></i>
             </a>
 
@@ -17,7 +21,8 @@
         <thead>
             <th>Nom&nbsp;<a ng-click="sort_by('nom');"><i class="glyphicon glyphicon-sort"></i></a></th>
             <th>Description&nbsp;<a ng-click="sort_by('descriptif');"><i class="glyphicon glyphicon-sort"></i></a></th>
-            <th>Adresse&nbsp;<a ng-click="sort_by('adresse');"><i class="glyphicon glyphicon-sort"></i></a></th>
+<!--             <th>Adresse&nbsp;<a ng-click="sort_by('adresse');"><i class="glyphicon glyphicon-sort"></i></a></th> -->
+            <th>Adresse</th>
             <th>Date</th>
             <th>Actions</th>
         </thead>
@@ -28,8 +33,13 @@
             <!-- <tr ng-repeat="theatre in theatres"> -->
             <tr ng-repeat="theatre in filtered = (theatres | filter:search | orderBy : predicate :reverse)">
                 <td>{{theatre.nom}}</td>
-                <td>{{theatre.descriptif}}</td>
-                <td>{{theatre.adresse}}</td>
+                <td style="width:250px;">{{theatre.descriptif}}</td>
+                <td style="width:250px;">
+                <p>{{theatre.adresse}}</p>
+                
+                    <img style="display:inline" src="https://maps.googleapis.com/maps/api/staticmap?center={{theatre.adresse}}&zoom=15&size=150x150" />
+
+                </td>
                 <td>
                     <ul ng-repeat="dates in theatre.dates">
                         <li><strong>{{dates.description}}</strong> : {{dates.date|date:'dd-MM-yyyy'}}</li>

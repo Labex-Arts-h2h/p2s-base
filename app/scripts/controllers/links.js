@@ -19,7 +19,10 @@ angular.module('p2sApp').controller('LinkcreateCtrl', function($scope, $state, A
         $scope.typeItem = [
         { id: 1, name: 'Theatre' },
         { id: 2, name: 'Personnes' },
-        { id: 3, name: 'Pièces' }
+        { id: 3, name: 'Pièces' },
+        { id: 4, name: 'Ressources' },
+        { id: 5, name: 'Lieux' },
+        { id: 6, name: 'Evénements' }
         ];
         $scope.disabled1 = $scope.disabled2 = true;
     };
@@ -30,6 +33,9 @@ angular.module('p2sApp').controller('LinkcreateCtrl', function($scope, $state, A
         if (me.link.target1.target.id == 1) {$scope.itemsSuggestTarget1 = Api.Theatres.query();};
         if (me.link.target1.target.id == 2) {$scope.itemsSuggestTarget1 = Api.Personnes.query();};
         if (me.link.target1.target.id == 3) {$scope.itemsSuggestTarget1 = Api.Pieces.query();};                 
+        if (me.link.target1.target.id == 4) {$scope.itemsSuggestTarget1 = Api.Ressources.query();};
+        if (me.link.target1.target.id == 5) {$scope.itemsSuggestTarget1 = Api.Events.query();};  
+        if (me.link.target1.target.id == 6) {$scope.itemsSuggestTarget1 = Api.Lieux.query();};  
     };
     $scope.launchType2 = function(me) {
         $scope.nextChoice = "true";
@@ -37,6 +43,9 @@ angular.module('p2sApp').controller('LinkcreateCtrl', function($scope, $state, A
         if (me.link.target2.target.id == 1) {$scope.itemsSuggestTarget2 = Api.Theatres.query();};
         if (me.link.target2.target.id == 2) {$scope.itemsSuggestTarget2 = Api.Personnes.query();};
         if (me.link.target2.target.id == 3) {$scope.itemsSuggestTarget2 = Api.Pieces.query();};                
+        if (me.link.target2.target.id == 4) {$scope.itemsSuggestTarget2 = Api.Ressources.query();};
+        if (me.link.target2.target.id == 5) {$scope.itemsSuggestTarget2 = Api.Events.query();};  
+        if (me.link.target2.target.id == 6) {$scope.itemsSuggestTarget2 = Api.Lieux.query();};         
     };    
     $scope.add = function() {
         $scope.link.$save(function() {
@@ -56,8 +65,11 @@ angular.module('p2sApp').controller('LinkeditCtrl', function($scope, $state, $st
     $scope.load = function() {
         $scope.typeItem = [
         { id: 1, name: 'Theatre' },
-        { id: 2, name: 'Personne' },
-        { id: 3, name: 'Pièces' }
+        { id: 2, name: 'Personnes' },
+        { id: 3, name: 'Pièces' },
+        { id: 4, name: 'Ressources' },
+        { id: 5, name: 'Lieux' },
+        { id: 6, name: 'Evénements' }
         ];
         $scope.disabled1 = $scope.disabled2 = true;
         $scope.link = Api.Links.get({
@@ -70,16 +82,21 @@ angular.module('p2sApp').controller('LinkeditCtrl', function($scope, $state, $st
         $scope.disabled1 = false;
         $scope.link.target1.selected = null;
         if (me.link.target1.target.id == 1) {$scope.itemsSuggestTarget1 = Api.Theatres.query();};
-        if (me.link.target1.target.id == 2) {$scope.itemsSuggestTarget1 = Api.Theatres.query();};
+        if (me.link.target1.target.id == 2) {$scope.itemsSuggestTarget1 = Api.Personnes.query();};
         if (me.link.target1.target.id == 3) {$scope.itemsSuggestTarget1 = Api.Pieces.query();};                 
+        if (me.link.target1.target.id == 4) {$scope.itemsSuggestTarget1 = Api.Ressources.query();};
+        if (me.link.target1.target.id == 5) {$scope.itemsSuggestTarget1 = Api.Events.query();};  
+        if (me.link.target1.target.id == 6) {$scope.itemsSuggestTarget1 = Api.Lieux.query();};  
     };
-
     $scope.launchType2 = function(me) {
         $scope.nextChoice = "true";
         $scope.disabled2 = false;
         if (me.link.target2.target.id == 1) {$scope.itemsSuggestTarget2 = Api.Theatres.query();};
-        if (me.link.target2.target.id == 2) {$scope.itemsSuggestTarget2 = Api.Theatres.query();};
+        if (me.link.target2.target.id == 2) {$scope.itemsSuggestTarget2 = Api.Personnes.query();};
         if (me.link.target2.target.id == 3) {$scope.itemsSuggestTarget2 = Api.Pieces.query();};                
-    };
+        if (me.link.target2.target.id == 4) {$scope.itemsSuggestTarget2 = Api.Ressources.query();};
+        if (me.link.target2.target.id == 5) {$scope.itemsSuggestTarget2 = Api.Events.query();};  
+        if (me.link.target2.target.id == 6) {$scope.itemsSuggestTarget2 = Api.Lieux.query();};         
+    };   
     $scope.load();
 });

@@ -1,0 +1,37 @@
+{
+	"type": "Collection",
+	"properties": {
+		"nom": {
+			"name": "nom",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "nom",
+			"order": 0
+		},
+		"adresse": {
+			"name": "adresse",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "adresse",
+			"order": 1
+		},
+		"descriptif": {
+			"name": "descriptif",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "descriptif",
+			"order": 2
+		},
+		"dates": {
+			"name": "dates",
+			"type": "array",
+			"typeLabel": "array",
+			"required": false,
+			"id": "dates",
+			"order": 3
+		}
+	}
+}

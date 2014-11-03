@@ -1,0 +1,54 @@
+<div>
+    
+    <div class="row">
+        <div class="col-md-8">
+            <h3 class="title-page">
+            <span class="glyphicon glyphicon-file"></span>
+             Ressources
+            </h3>
+            <a class="btn btn-success btn-title" ui-sref="newRessource">
+                <i class="glyphicon glyphicon-plus"></i>
+            </a>
+
+        </div>
+        <div class="col-md-4">
+            <input type="text" ng-model="search" ng-change="filter()" placeholder="Recherche" class="form-control" />        
+        </div>
+    </div>
+
+    
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <th>Nom&nbsp;<a ng-click="sort_by('nom');"><i class="glyphicon glyphicon-sort"></i></a></th>
+            <th>Description&nbsp;<a ng-click="sort_by('descriptif');"><i class="glyphicon glyphicon-sort"></i></a></th>
+            <th>Url</th>
+            <th>Aperçu</th>
+            <th>Actions</th>
+        </thead>
+        <tbody>
+
+
+
+            <!-- <tr ng-repeat="theatre in theatres"> -->
+            <tr ng-repeat="ressource in filtered = (ressources | filter:search | orderBy : predicate :reverse)">
+                <td>{{ressource.nom}}</td>
+                <td>{{ressource.descriptif}}</td>
+                <td>
+                <a target="_blank" href="{{ressource.url}}">Lien de la ressource</a>
+                </td>
+                <td>
+                    <img width="150px" src="{{ressource.urlPreview}}">
+                </td>
+                <td>
+                    <a class="btn btn-primary" ui-sref="editRessource({id:ressource.id})">
+                        <i class="glyphicon glyphicon-pencil"></i>
+                    </a>
+                    <a class="btn btn-danger" data-animation="am-fade-and-slide-top" data-template="views/modal/confirmDelete.tpl.html"  data-placement="center" data-title="Suppression" data-content="Effacer cette ressource ?" bs-modal="modal">
+                        <i class="glyphicon glyphicon-remove"></i>
+                    </a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

@@ -1,0 +1,29 @@
+{
+	"type": "Collection",
+	"properties": {
+		"nom": {
+			"name": "nom",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "nom",
+			"order": 0
+		},
+		"descriptif": {
+			"name": "descriptif",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "descriptif",
+			"order": 1
+		},
+		"dates": {
+			"name": "dates",
+			"type": "array",
+			"typeLabel": "array",
+			"required": false,
+			"id": "dates",
+			"order": 2
+		}
+	}
+}

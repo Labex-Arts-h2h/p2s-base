@@ -88,6 +88,51 @@ angular.module('p2sApp')
         templateUrl:'views/personnes/personne-edit.html',
         controller:'PersonneeditCtrl',
         authorizedRoles : [USER_ROLES.admin, USER_ROLES.editor]        
+    }).state('ressources',{
+       url:'/ressources',
+       templateUrl:'views/ressources/ressources.html',
+       controller:'RessourcesCtrl',
+       authorizedRoles : [USER_ROLES.admin, USER_ROLES.editor]       
+    }).state('newRessource',{
+        url:'/ressource/new',
+        templateUrl:'views/ressources/ressource-add.html',
+        controller:'RessourcecreateCtrl',
+        authorizedRoles : [USER_ROLES.admin, USER_ROLES.editor]
+    }).state('editRessource',{
+        url:'/ressource/:id/edit',
+        templateUrl:'views/ressources/ressource-edit.html',
+        controller:'RessourceeditCtrl',
+        authorizedRoles : [USER_ROLES.admin, USER_ROLES.editor]        
+    }).state('lieux',{
+       url:'/lieux',
+       templateUrl:'views/lieux/lieux.html',
+       controller:'LieuxCtrl',
+       authorizedRoles : [USER_ROLES.admin, USER_ROLES.editor]       
+    }).state('newLieu',{
+        url:'/lieux/new',
+        templateUrl:'views/lieux/lieu-add.html',
+        controller:'LieucreateCtrl',
+        authorizedRoles : [USER_ROLES.admin, USER_ROLES.editor]
+    }).state('editLieu',{
+        url:'/lieu/:id/edit',
+        templateUrl:'views/lieux/lieu-edit.html',
+        controller:'LieueditCtrl',
+        authorizedRoles : [USER_ROLES.admin, USER_ROLES.editor]        
+    }).state('events',{
+       url:'/events',
+       templateUrl:'views/events/events.html',
+       controller:'EventsCtrl',
+       authorizedRoles : [USER_ROLES.admin, USER_ROLES.editor]       
+    }).state('newEvent',{
+        url:'/events/new',
+        templateUrl:'views/events/event-add.html',
+        controller:'EventcreateCtrl',
+        authorizedRoles : [USER_ROLES.admin, USER_ROLES.editor]
+    }).state('editEvent',{
+        url:'/events/:id/edit',
+        templateUrl:'views/events/event-edit.html',
+        controller:'EventeditCtrl',
+        authorizedRoles : [USER_ROLES.admin, USER_ROLES.editor]        
     });
 
     $urlRouterProvider.otherwise('/login');

@@ -36,7 +36,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="#/">Patrimoine du Spectacle - DB</a>
+          <a class="navbar-brand" href="#/">Patrimoine du Spectacle</a>
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" ng-controller="NavCtrl">
 <!--           <ul class="nav navbar-nav" ng-if="isAuthorized(userRoles.admin)">
@@ -67,8 +67,9 @@
     </nav>
     <div class="container-fluid">
       <div class="row">
-        <div class="col-sm-3 col-md-2 sidebar" ng-controller="NavCtrl">
-            <ul class="nav nav-sidebar" ng-if="isAuthorized(userRoles.admin)">
+        <div ng-controller="NavCtrl">
+        <div class="col-sm-3 col-md-2 sidebar" ng-if="isAuthorized(userRoles.admin)">
+            <ul class="nav nav-sidebar" >
               <li ng-class="{ active: isActive('/')}">
                 <a href="#/">
                   <span class="glyphicon glyphicon-eye-open"></span>
@@ -77,7 +78,7 @@
               </li>
             </ul>
             <hr />
-            <ul class="nav nav-sidebar" ng-if="isAuthorized(userRoles.admin)">
+            <ul class="nav nav-sidebar">
               <li ng-class="{ active: isActive('/theatres')}">
                 <a href="#/theatres">
                   <span class="glyphicon glyphicon-home"></span>
@@ -95,28 +96,28 @@
               </li>            
             </ul>
             <hr />
-            <ul class="nav nav-sidebar" ng-if="isAuthorized(userRoles.admin)">
-              <li ng-class="{ active: isActive('/res')}">
-                <a href="#/res">
+            <ul class="nav nav-sidebar">
+              <li ng-class="{ active: isActive('/ressources')}">
+                <a href="#/ressources">
                   <span class="glyphicon glyphicon-file"></span>
                   Ressources
                 </a>
               </li>
-              <li ng-class="{ active: isActive('/res')}">
-                <a href="#/res">
+              <li ng-class="{ active: isActive('/lieux')}">
+                <a href="#/lieux">
                   <span class="glyphicon glyphicon-map-marker"></span>
                   Lieux
                 </a>
               </li>
-              <li ng-class="{ active: isActive('/res')}">
-                <a href="#/res">
+              <li ng-class="{ active: isActive('/events')}">
+                <a href="#/events">
                   <span class="glyphicon glyphicon-calendar"></span>
                 Evénements
                 </a>
               </li>                            
             </ul>
             <hr />
-            <ul class="nav nav-sidebar" ng-if="isAuthorized(userRoles.admin)">
+            <ul class="nav nav-sidebar">
               <li ng-class="{ active: isActive('/links')}">
                 <a href="#/links">
                   <span class="glyphicon glyphicon-link"></span>
@@ -124,9 +125,9 @@
                 </a>
               </li>
             </ul>
-
-        </div>      
-        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main" ui-view></div>
+        </div>
+        </div>   
+        <div ng-class="{ 'col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main' : true }" class="" ui-view></div>
       </div>
     </div>
 
@@ -176,6 +177,9 @@
         <script src="scripts/controllers/theatres.js"></script>
         <script src="scripts/controllers/pieces.js"></script>
         <script src="scripts/controllers/personnes.js"></script>
+        <script src="scripts/controllers/ressources.js"></script>
+        <script src="scripts/controllers/lieux.js"></script>  
+        <script src="scripts/controllers/events.js"></script>        
         <script src="scripts/controllers/links.js"></script>
         <script src="scripts/controllers/nav.js"></script>
         <script src="scripts/controllers/link.js"></script>

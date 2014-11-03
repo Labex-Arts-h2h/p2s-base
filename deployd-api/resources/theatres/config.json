@@ -25,29 +25,21 @@
 			"id": "adresse",
 			"order": 2
 		},
-		"gps": {
-			"name": "gps",
-			"type": "string",
-			"typeLabel": "string",
-			"required": false,
-			"id": "gps",
-			"order": 3
-		},
-		"links": {
-			"name": "links",
-			"type": "string",
-			"typeLabel": "string",
-			"required": false,
-			"id": "links",
-			"order": 4
-		},
 		"dates": {
 			"name": "dates",
 			"type": "array",
 			"typeLabel": "array",
 			"required": false,
 			"id": "dates",
-			"order": 5
+			"order": 3
+		},
+		"localisation": {
+			"name": "localisation",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "localisation",
+			"order": 4
 		}
 	}
 }
