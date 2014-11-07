@@ -34,8 +34,8 @@ angular.module('p2sApp').controller('LinkcreateCtrl', function($scope, $state, A
         if (me.link.target1.target.id == 2) {$scope.itemsSuggestTarget1 = Api.Personnes.query();};
         if (me.link.target1.target.id == 3) {$scope.itemsSuggestTarget1 = Api.Pieces.query();};                 
         if (me.link.target1.target.id == 4) {$scope.itemsSuggestTarget1 = Api.Ressources.query();};
-        if (me.link.target1.target.id == 5) {$scope.itemsSuggestTarget1 = Api.Events.query();};  
-        if (me.link.target1.target.id == 6) {$scope.itemsSuggestTarget1 = Api.Lieux.query();};  
+        if (me.link.target1.target.id == 5) {$scope.itemsSuggestTarget1 = Api.Lieux.query();};  
+        if (me.link.target1.target.id == 6) {$scope.itemsSuggestTarget1 = Api.Events.query();};  
     };
     $scope.launchType2 = function(me) {
         $scope.nextChoice = "true";
@@ -44,8 +44,8 @@ angular.module('p2sApp').controller('LinkcreateCtrl', function($scope, $state, A
         if (me.link.target2.target.id == 2) {$scope.itemsSuggestTarget2 = Api.Personnes.query();};
         if (me.link.target2.target.id == 3) {$scope.itemsSuggestTarget2 = Api.Pieces.query();};                
         if (me.link.target2.target.id == 4) {$scope.itemsSuggestTarget2 = Api.Ressources.query();};
-        if (me.link.target2.target.id == 5) {$scope.itemsSuggestTarget2 = Api.Events.query();};  
-        if (me.link.target2.target.id == 6) {$scope.itemsSuggestTarget2 = Api.Lieux.query();};         
+        if (me.link.target2.target.id == 5) {$scope.itemsSuggestTarget2 = Api.Lieux.query();};  
+        if (me.link.target2.target.id == 6) {$scope.itemsSuggestTarget2 = Api.Events.query();};         
     };    
     $scope.add = function() {
         $scope.link.$save(function() {
@@ -85,8 +85,8 @@ angular.module('p2sApp').controller('LinkeditCtrl', function($scope, $state, $st
         if (me.link.target1.target.id == 2) {$scope.itemsSuggestTarget1 = Api.Personnes.query();};
         if (me.link.target1.target.id == 3) {$scope.itemsSuggestTarget1 = Api.Pieces.query();};                 
         if (me.link.target1.target.id == 4) {$scope.itemsSuggestTarget1 = Api.Ressources.query();};
-        if (me.link.target1.target.id == 5) {$scope.itemsSuggestTarget1 = Api.Events.query();};  
-        if (me.link.target1.target.id == 6) {$scope.itemsSuggestTarget1 = Api.Lieux.query();};  
+        if (me.link.target1.target.id == 5) {$scope.itemsSuggestTarget1 = Api.Lieux.query();};  
+        if (me.link.target1.target.id == 6) {$scope.itemsSuggestTarget1 = Api.Events.query();};  
     };
     $scope.launchType2 = function(me) {
         $scope.nextChoice = "true";
@@ -95,8 +95,8 @@ angular.module('p2sApp').controller('LinkeditCtrl', function($scope, $state, $st
         if (me.link.target2.target.id == 2) {$scope.itemsSuggestTarget2 = Api.Personnes.query();};
         if (me.link.target2.target.id == 3) {$scope.itemsSuggestTarget2 = Api.Pieces.query();};                
         if (me.link.target2.target.id == 4) {$scope.itemsSuggestTarget2 = Api.Ressources.query();};
-        if (me.link.target2.target.id == 5) {$scope.itemsSuggestTarget2 = Api.Events.query();};  
-        if (me.link.target2.target.id == 6) {$scope.itemsSuggestTarget2 = Api.Lieux.query();};         
+        if (me.link.target2.target.id == 5) {$scope.itemsSuggestTarget2 = Api.Lieux.query();};  
+        if (me.link.target2.target.id == 6) {$scope.itemsSuggestTarget2 = Api.Events.query();};         
     };   
     $scope.load();
 });
