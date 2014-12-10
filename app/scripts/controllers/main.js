@@ -80,7 +80,7 @@ angular.module('p2sApp').controller('MainCtrl', function($scope, USER_ROLES, Aut
             }
           },
           'lieu': {
-            shape: 'dot',
+            shape: 'square',
             'color': {
               border: '#543D3D',
               background: '#543D3D'

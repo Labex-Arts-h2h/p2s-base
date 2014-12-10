@@ -47,10 +47,10 @@
     Période <small>(Date de début et date de fin)</small></label><br>
     <div class="col-sm-8">    
         <div>
-            <input class="form-control" type="text" ng-model="link.debut" data-max-date="{{untilDate}}" placeholder="Début" bs-datepicker>
+            <input class="form-control" type="text" ng-model="link.debut" data-max-date="{{untilDate}}" placeholder="Début" data-date-format="dd-MM-yyyy" bs-datepicker>
         </div>
         <div>
-            <input class="form-control" type="text" ng-model="link.fin" data-min-date="{{fromDate}}" placeholder="Fin" bs-datepicker>
+            <input class="form-control" type="text" ng-model="link.fin" data-min-date="{{fromDate}}" placeholder="Fin" data-date-format="dd-MM-yyyy" bs-datepicker>
         </div>
     </div>
 </div>
